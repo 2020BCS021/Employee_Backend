@@ -26,7 +26,6 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install
-        working-directory:./Java-React-Site/springboot-backend
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -50,9 +49,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_DA8ED35D294742ABA1AA92AB92110531 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_2147438086234CA483E2E4C5AC0A3BAB }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_9A9DEF9555C74EE08EFC3476F97B6CEB }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_A4986491E6BC4C64B35C09CEDB99EEAC }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_59A81A578D9F4CEDA6A23C4C9A0DF5D5 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_77152C9490124950B82609DA082D370D }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -61,5 +60,4 @@ jobs:
           app-name: 'EmployeeBackend'
           slot-name: 'Production'
           package: '*.jar'
-
           
