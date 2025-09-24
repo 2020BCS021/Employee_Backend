@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: Java-React-Site/springboot-backend/target/*.jar'
+          path: Java-React-Site/springboot-backend/target/*.jar
 
   deploy:
     runs-on: ubuntu-latest
@@ -63,3 +63,4 @@ jobs:
           package: '*.jar'
 
           
+
